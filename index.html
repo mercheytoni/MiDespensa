@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- iPhone: instalable desde Safari con "Añadir a pantalla de inicio" -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MiDespensa">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<meta name="theme-color" content="#E4572E">
+<title>MiDespensa</title>
+<!-- Favicon: se rellena desde JS con el mismo SVG del icono -->
+<link rel="icon" id="favicon" href="data:,">
+
+<!-- LIBRERÍAS POR CDN (necesitan internet la primera vez) -->
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+  :root{
+    --naranja:#E4572E; --naranja2:#FFB347; --marron:#7A3E1D; --crema:#FFF3E0;
+    --texto:#3b2a1e; --gris:#8d7b6d; --rojo:#c62828; --verde:#2e7d32;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--crema);color:var(--texto);min-height:100vh;padding-bottom:90px}
+  button{font:inherit;cursor:pointer;border:0;border-radius:10px;padding:10px 14px;background:var(--naranja);color:#fff;font-weight:600}
+  button.sec{background:#fff;color:var(--marron);border:2px solid var(--naranja2)}
+  button.peligro{background:var(--rojo)}
+  button.mini{padding:8px 10px;font-size:.9rem}
+  input,select,textarea{font:inherit;font-size:16px;width:100%;padding:10px;border:2px solid #e6d3bd;border-radius:10px;background:#fff;color:var(--texto)}
+  label{display:block;font-weight:600;margin:12px 0 4px;font-size:.92rem}
+
+  /* SPLASH */
+  #splash{position:fixed;-webkit-user-select:none;inset:0;z-index:9999;background:linear-gradient(135deg,var(--naranja2),var(--naranja));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .6s}
+  #splash.oculto{opacity:0;pointer-events:none}
+  #splash svg{width:140px;height:140px;filter:drop-shadow(0 6px 12px rgba(0,0,0,.25));animation:pop .8s ease-out}
+  #splash p{color:#fff;font-size:1.2rem;font-weight:600;max-width:320px;margin-top:24px;line-height:1.4;text-shadow:0 1px 3px rgba(0,0,0,.3)}
+  @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+
+  /* CABECERA */
+  header{background:linear-gradient(135deg,var(--naranja2),var(--naranja));color:#fff;padding:calc(12px + env(safe-area-inset-top)) 14px 12px;position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+  .fila-cab{display:flex;align-items:center;gap:10px}
+  .fila-cab svg{width:40px;height:40px;flex:none}
+  .fila-cab h1{font-size:1.3rem;margin:0;flex:1}
+  .acciones{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  .acciones button{background:#fff;color:var(--marron);flex:1;min-width:90px;padding:9px 6px;font-size:.88rem}
+  main{padding:12px 14px;max-width:720px;margin:0 auto}
+  .filtros{display:flex;gap:8px;margin-bottom:12px}
+  .filtros input{flex:2}.filtros select{flex:1}
+
+  /* PRODUCTOS */
+  .producto{display:flex;gap:12px;background:#fff;border-radius:14px;padding:10px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.1);border-left:6px solid var(--verde)}
+  .producto.bajo{border-left-color:var(--rojo);background:#fff5f3}
+  .miniatura{width:64px;height:64px;border-radius:10px;object-fit:cover;background:#f3e4cf;flex:none;display:flex;align-items:center;justify-content:center;font-size:1.8rem}
+  .info{flex:1;min-width:0}
+  .info h3{margin:0 0 2px;font-size:1.05rem;word-break:break-word}
+  .info small{color:var(--gris)}
+  .cant{font-size:1.1rem;font-weight:700;margin:4px 0}
+  .bajo .cant{color:var(--rojo)}
+  .botones{display:flex;gap:6px;flex-wrap:wrap}
+  .vacio{text-align:center;color:var(--gris);padding:40px 10px}
+
+  /* MODALES */
+  .modal{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;display:none;align-items:flex-end;justify-content:center}
+  .modal.abierto{display:flex}
+  .modal-caja{background:var(--crema);width:100%;max-width:560px;max-height:94vh;overflow-y:auto;border-radius:20px 20px 0 0;padding:16px}
+  .modal-caja h2{margin:0 0 6px;color:var(--marron)}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .foto-botones{display:flex;gap:8px}
+  .foto-botones button{flex:1}
+  #previewFoto{width:120px;height:120px;object-fit:cover;border-radius:12px;margin-top:10px;display:none;border:2px solid var(--naranja2)}
+  .pie-modal{display:flex;gap:8px;margin-top:16px}
+  .pie-modal button{flex:1}
+  .aviso{background:#fff8e1;border-left:4px solid var(--naranja2);padding:8px 10px;border-radius:8px;font-size:.85rem;margin:10px 0}
+
+  /* OCR */
+  #ocrTexto{min-height:140px;font-family:monospace;font-size:.85rem}
+  progress{width:100%;height:14px}
+  .detectado{display:grid;grid-template-columns:auto 60px 1fr;gap:6px;align-items:center;margin-bottom:6px}
+  .detectado input[type=checkbox]{width:22px;height:22px}
+
+  #toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--marron);color:#fff;padding:12px 18px;border-radius:24px;z-index:500;opacity:0;transition:opacity .3s;pointer-events:none;max-width:90%;text-align:center}
+  #toast.visible{opacity:1}
+  .fab{position:fixed;right:16px;bottom:calc(20px + env(safe-area-inset-bottom));width:60px;height:60px;border-radius:50%;font-size:2rem;line-height:1;padding:0;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:60}
+</style>
+</head>
+<body>
+
+<!-- ===== PANTALLA DE INICIO (SPLASH) ===== -->
+<div id="splash">
+  <div id="splashIcono"></div>
+  <p>Aplicación creada por Mercheytoni, en colaboración con Deepseek y Claude.</p>
+</div>
+
+<!-- ===== CABECERA ===== -->
+<header>
+  <div class="fila-cab">
+    <span id="cabIcono"></span>
+    <h1>MiDespensa</h1>
+  </div>
+  <div class="acciones">
+    <button id="btnTicket">🧾 Escanear ticket</button>
+    <button id="btnPdf">📄 Descargar PDF</button>
+  </div>
+</header>
+
+<main>
+  <div class="filtros">
+    <input type="search" id="buscar" placeholder="Buscar producto…">
+    <select id="filtroCat">
+      <option value="">Todas</option>
+      <option value="despensa">Despensa</option>
+      <option value="nevera">Nevera</option>
+      <option value="congelador">Congelador</option>
+      <option value="limpieza">Limpieza</option>
+      <option value="otros">Otros</option>
+    </select>
+  </div>
+  <div id="resumen" style="margin-bottom:8px;color:var(--gris);font-size:.9rem"></div>
+  <div id="lista"></div>
+</main>
+
+<button class="fab" id="btnNuevo" title="Añadir producto">+</button>
+
+<!-- ===== MODAL PRODUCTO ===== -->
+<div class="modal" id="modalProd">
+  <div class="modal-caja">
+    <h2 id="tituloProd">Nuevo producto</h2>
+    <label for="fNombre">Nombre</label>
+    <input id="fNombre" placeholder="Ej: Leche entera">
+    <div class="dos">
+      <div><label for="fCat">Categoría</label>
+        <select id="fCat">
+          <option value="despensa">Despensa</option><option value="nevera">Nevera</option>
+          <option value="congelador">Congelador</option><option value="limpieza">Limpieza</option>
+          <option value="otros">Otros</option>
+        </select></div>
+      <div><label for="fUnidad">Unidad</label>
+        <select id="fUnidad">
+          <option value="unidades">unidades</option><option value="kg">kg</option>
+          <option value="litros">litros</option><option value="paquetes">paquetes</option>
+        </select></div>
+      <div><label for="fCant">Cantidad actual</label><input id="fCant" type="number" min="0" step="any" value="1" inputmode="decimal"></div>
+      <div><label for="fMin">Stock mínimo</label><input id="fMin" type="number" min="0" step="any" value="1" inputmode="decimal"></div>
+    </div>
+
+    <label>Foto del producto (opcional)</label>
+    <div class="foto-botones">
+      <button type="button" id="btnHacerFoto">📷 Hacer foto</button>
+      <button type="button" class="sec" id="btnGaleria">🖼️ Elegir de galería</button>
+    </div>
+    <!-- Dos inputs ocultos: con capture (cámara trasera) y sin capture (galería) -->
+    <input type="file" id="inFotoCamara" accept="image/*" capture="environment" hidden>
+    <input type="file" id="inFotoGaleria" accept="image/*" hidden>
+    <img id="previewFoto" alt="Vista previa">
+    <div><button type="button" class="sec mini" id="btnQuitarFoto" style="display:none;margin-top:8px">🗑️ Quitar foto</button></div>
+    <div class="aviso">Las fotos se reducen a un máximo de 600 px y se comprimen antes de guardarse, para no llenar el almacenamiento del móvil.</div>
+
+    <div class="pie-modal">
+      <button class="sec" id="btnCancelarProd">Cancelar</button>
+      <button id="btnGuardarProd">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL TICKET OCR ===== -->
+<div class="modal" id="modalTicket">
+  <div class="modal-caja">
+    <h2>Leer ticket de compra</h2>
+    <div class="foto-botones">
+      <button type="button" id="btnTicketCamara">📷 Hacer foto</button>
+      <button type="button" class="sec" id="btnTicketGaleria">🖼️ Galería</button>
+    </div>
+    <input type="file" id="inTicketCamara" accept="image/*" capture="environment" hidden>
+    <input type="file" id="inTicketGaleria" accept="image/*" hidden>
+    <div class="aviso">El OCR descarga el modelo de idioma la primera vez (necesita internet). Una foto nítida, recta y bien iluminada da mejores resultados.</div>
+    <progress id="ocrProgreso" value="0" max="100" style="display:none"></progress>
+    <div id="ocrEstado" style="font-size:.85rem;color:var(--gris)"></div>
+
+    <label for="ocrTexto">Texto reconocido (puedes editarlo)</label>
+    <textarea id="ocrTexto" placeholder="Aquí aparecerá el texto del ticket…"></textarea>
+    <button class="sec mini" id="btnReparsear" style="margin-top:8px">🔄 Volver a detectar productos</button>
+
+    <label>Productos detectados (revisa y confirma)</label>
+    <div id="detectados"><small style="color:var(--gris)">Aún no hay productos detectados.</small></div>
+
+    <div class="pie-modal">
+      <button class="sec" id="btnCerrarTicket">Cerrar</button>
+      <button id="btnConfirmarTicket">Añadir seleccionados</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* =====================================================================
+   MiDespensa - todo en un solo archivo.
+   ===================================================================== */
+
+/* ---------- 1. ICONO SVG (mismo icono para splash, cabecera y favicon) ---------- */
+const ICONO_SVG =
+'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">' +
+'<defs><linearGradient id="gIcono" x1="0" y1="0" x2="1" y2="1">' +
+'<stop offset="0" stop-color="#FFB347"/><stop offset="1" stop-color="#E4572E"/></linearGradient></defs>' +
+'<rect width="512" height="512" rx="110" fill="url(#gIcono)"/>' +
+'<rect x="150" y="80" width="212" height="52" rx="14" fill="#7A3E1D"/>' +
+'<path d="M165 140h182v44c22 20 32 50 32 92v118a48 48 0 0 1-48 48H181a48 48 0 0 1-48-48V276c0-42 10-72 32-92z" fill="#FFF3E0"/>' +
+'<rect x="168" y="262" width="176" height="104" rx="14" fill="#F6C177"/>' +
+'<path d="M206 316l36 36 66-70" fill="none" stroke="#7A3E1D" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>' +
+'</svg>';
+
+document.getElementById('splashIcono').innerHTML = ICONO_SVG;
+document.getElementById('cabIcono').innerHTML = ICONO_SVG;
+document.querySelector('#cabIcono svg').style.cssText = 'width:40px;height:40px;display:block';
+document.getElementById('favicon').href = 'data:image/svg+xml;base64,' + btoa(ICONO_SVG);
+
+/* Splash: 2,5 s y transición */
+setTimeout(function(){
+  var s = document.getElementById('splash');
+  s.classList.add('oculto');
+  setTimeout(function(){ s.style.display = 'none'; }, 700);
+}, 2500);
+
+/* ---------- 2. UTILIDADES ---------- */
+const $ = id => document.getElementById(id);
+function esc(t){ return String(t == null ? '' : t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function toast(msg){
+  const t = $('toast'); t.textContent = msg; t.classList.add('visible');
+  clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove('visible'), 2600);
+}
+function num(v){ const n = parseFloat(String(v).replace(',', '.')); return isNaN(n) ? 0 : n; }
+function fmt(n){ return Math.round(n * 100) / 100; }
+
+/* ---------- 3. BASE DE DATOS (IndexedDB) ---------- */
+let db = null;
+function abrirDB(){
+  return new Promise((ok, fallo) => {
+    const req = indexedDB.open('midespensa-db', 1);
+    req.onupgradeneeded = e => {
+      e.target.result.createObjectStore('productos', { keyPath: 'id', autoIncrement: true });
+    };
+    req.onsuccess = e => { db = e.target.result; ok(); };
+    req.onerror = () => fallo(req.error);
+  });
+}
+function tx(modo){ return db.transaction('productos', modo).objectStore('productos'); }
+function pedir(req){ return new Promise((ok, fallo) => { req.onsuccess = () => ok(req.result); req.onerror = () => fallo(req.error); }); }
+const dbTodos  = () => pedir(tx('readonly').getAll());
+const dbGuardar = p => pedir(tx('readwrite').put(p));
+const dbBorrar = id => pedir(tx('readwrite').delete(id));
+
+/* ---------- 4. LISTADO ---------- */
+let productos = [];
+const ICONOS_CAT = { despensa:'🥫', nevera:'🧊', congelador:'❄️', limpieza:'🧽', otros:'📦' };
+
+async function cargar(){ productos = await dbTodos(); pintar(); }
+
+function pintar(){
+  const q = $('buscar').value.trim().toLowerCase();
+  const cat = $('filtroCat').value;
+  const vis = productos
+    .filter(p => (!cat || p.categoria === cat) && (!q || p.nombre.toLowerCase().includes(q)))
+    .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+  const bajos = productos.filter(p => p.cantidad <= p.minimo).length;
+  $('resumen').textContent = productos.length + ' productos' + (bajos ? ' · ⚠️ ' + bajos + ' bajo mínimo' : '');
+  if (!vis.length){
+    $('lista').innerHTML = '<div class="vacio">' + (productos.length ? 'Sin resultados.' : 'Tu despensa está vacía.<br>Pulsa + para añadir tu primer producto.') + '</div>';
+    return;
+  }
+  $('lista').innerHTML = vis.map(p => {
+    const bajo = p.cantidad <= p.minimo;
+    const mini = p.foto ? '<img class="miniatura" src="' + p.foto + '" alt="">' : '<div class="miniatura">' + (ICONOS_CAT[p.categoria] || '📦') + '</div>';
+    return '<div class="producto' + (bajo ? ' bajo' : '') + '">' + mini +
+      '<div class="info"><h3>' + (bajo ? '⚠️ ' : '') + esc(p.nombre) + '</h3>' +
+      '<small>' + esc(p.categoria) + ' · mínimo ' + fmt(p.minimo) + '</small>' +
+      '<div class="cant">' + fmt(p.cantidad) + ' ' + esc(p.unidad) + '</div>' +
+      '<div class="botones">' +
+      '<button class="mini" data-a="menos" data-id="' + p.id + '">−1</button>' +
+      '<button class="mini" data-a="mas" data-id="' + p.id + '">+1</button>' +
+      '<button class="mini sec" data-a="editar" data-id="' + p.id + '">✏️</button>' +
+      '<button class="mini peligro" data-a="borrar" data-id="' + p.id + '">🗑️</button>' +
+      '</div></div></div>';
+  }).join('');
+}
+
+$('lista').addEventListener('click', async e => {
+  const b = e.target.closest('button'); if (!b) return;
+  const id = Number(b.dataset.id); const p = productos.find(x => x.id === id); if (!p) return;
+  if (b.dataset.a === 'menos'){ p.cantidad = Math.max(0, fmt(p.cantidad - 1)); await dbGuardar(p); if (p.cantidad <= p.minimo) toast('⚠️ ' + p.nombre + ' está bajo mínimo'); }
+  else if (b.dataset.a === 'mas'){ p.cantidad = fmt(p.cantidad + 1); await dbGuardar(p); }
+  else if (b.dataset.a === 'editar'){ abrirProducto(p); return; }
+  else if (b.dataset.a === 'borrar'){ if (!confirm('¿Eliminar "' + p.nombre + '"?')) return; await dbBorrar(id); toast('Producto eliminado'); }
+  cargar();
+});
+$('buscar').addEventListener('input', pintar);
+$('filtroCat').addEventListener('change', pintar);
+
+/* ---------- 5. FORMULARIO DE PRODUCTO ---------- */
+let editando = null;   // producto en edición (o null si es nuevo)
+let fotoActual = '';   // base64 de la foto elegida
+
+function mostrarFoto(){
+  const img = $('previewFoto');
+  if (fotoActual){ img.src = fotoActual; img.style.display = 'block'; $('btnQuitarFoto').style.display = 'inline-block'; }
+  else { img.removeAttribute('src'); img.style.display = 'none'; $('btnQuitarFoto').style.display = 'none'; }
+}
+function abrirProducto(p){
+  editando = p || null;
+  $('tituloProd').textContent = p ? 'Editar producto' : 'Nuevo producto';
+  $('fNombre').value = p ? p.nombre : '';
+  $('fCat').value = p ? p.categoria : 'despensa';
+  $('fUnidad').value = p ? p.unidad : 'unidades';
+  $('fCant').value = p ? p.cantidad : 1;
+  $('fMin').value = p ? p.minimo : 1;
+  fotoActual = p ? (p.foto || '') : '';
+  mostrarFoto();
+  $('modalProd').classList.add('abierto');
+}
+function cerrarProducto(){ $('modalProd').classList.remove('abierto'); }
+
+/* Redimensiona y comprime con canvas: máx 600 px, JPEG calidad 0.7 (~30-80 KB) */
+function comprimirImagen(file, maxLado, calidad){
+  return new Promise((ok, fallo) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      let w = img.width, h = img.height;
+      const k = Math.min(1, maxLado / Math.max(w, h));
+      w = Math.round(w * k); h = Math.round(h * k);
+      const c = document.createElement('canvas'); c.width = w; c.height = h;
+      c.getContext('2d').drawImage(img, 0, 0, w, h);
+      URL.revokeObjectURL(url);
+      ok(c.toDataURL('image/jpeg', calidad));
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); fallo(new Error('No se pudo leer la imagen')); };
+    img.src = url;
+  });
+}
+async function alElegirFoto(e){
+  const f = e.target.files[0]; if (!f) return;
+  try { fotoActual = await comprimirImagen(f, 600, 0.7); mostrarFoto(); }
+  catch(err){ toast('Error con la imagen'); }
+  e.target.value = '';
+}
+$('btnHacerFoto').onclick = () => $('inFotoCamara').click();
+$('btnGaleria').onclick = () => $('inFotoGaleria').click();
+$('inFotoCamara').addEventListener('change', alElegirFoto);
+$('inFotoGaleria').addEventListener('change', alElegirFoto);
+$('btnQuitarFoto').onclick = () => { fotoActual = ''; mostrarFoto(); };
+
+$('btnNuevo').onclick = () => abrirProducto(null);
+$('btnCancelarProd').onclick = cerrarProducto;
+$('btnGuardarProd').onclick = async () => {
+  const nombre = $('fNombre').value.trim();
+  if (!nombre){ toast('Escribe un nombre'); return; }
+  const p = editando || {};
+  p.nombre = nombre;
+  p.categoria = $('fCat').value;
+  p.unidad = $('fUnidad').value;
+  p.cantidad = Math.max(0, num($('fCant').value));
+  p.minimo = Math.max(0, num($('fMin').value));
+  p.foto = fotoActual;
+  try { await dbGuardar(p); cerrarProducto(); toast('Guardado ✔'); cargar(); }
+  catch(err){ toast('No se pudo guardar (¿almacenamiento lleno?)'); }
+};
+
+/* ---------- 6. OCR DE TICKETS ---------- */
+let detectados = [];
+const PALABRAS_IGNORAR = /total|subtotal|iva|cambio|efectivo|tarjeta|visa|mastercard|entregado|importe|factura|ticket|cif|nif|tel|fecha|hora|gracias|descuento|ahorro|cajero|caja|operaci|pago/i;
+
+function abrirTicket(){ $('modalTicket').classList.add('abierto'); }
+$('btnTicket').onclick = abrirTicket;
+$('btnCerrarTicket').onclick = () => $('modalTicket').classList.remove('abierto');
+$('btnTicketCamara').onclick = () => $('inTicketCamara').click();
+$('btnTicketGaleria').onclick = () => $('inTicketGaleria').click();
+
+async function procesarTicket(e){
+  const f = e.target.files[0]; if (!f) return;
+  e.target.value = '';
+  if (typeof Tesseract === 'undefined'){ toast('Tesseract no cargó. Comprueba tu conexión.'); return; }
+  const prog = $('ocrProgreso'); prog.style.display = 'block'; prog.value = 0;
+  $('ocrEstado').textContent = 'Preparando OCR…';
+  try {
+    // Reducimos la imagen a 1600 px para que el OCR sea más rápido sin perder legibilidad
+    const dataUrl = await comprimirImagen(f, 1600, 0.9);
+    const res = await Tesseract.recognize(dataUrl, 'spa', {
+      logger: m => {
+        if (m.status) $('ocrEstado').textContent = m.status + (m.progress ? ' ' + Math.round(m.progress * 100) + '%' : '');
+        if (m.progress != null) prog.value = Math.round(m.progress * 100);
+      }
+    });
+    $('ocrTexto').value = res.data.text;
+    $('ocrEstado').textContent = 'Listo. Revisa el texto y los productos detectados.';
+    parsearTicket();
+  } catch(err){
+    $('ocrEstado').textContent = 'Error en el OCR: ' + (err && err.message ? err.message : err);
+  }
+  prog.style.display = 'none';
+}
+$('inTicketCamara').addEventListener('change', procesarTicket);
+$('inTicketGaleria').addEventListener('change', procesarTicket);
+
+function limpiarNombre(n){
+  return n.replace(/[^\p{L}\p{N}\s.,%\-\/]/gu, ' ').replace(/\s+/g, ' ').trim();
+}
+function parsearTicket(){
+  detectados = [];
+  const lineas = $('ocrTexto').value.split(/\r?\n/);
+  for (let raw of lineas){
+    const l = raw.trim(); if (l.length < 4 || PALABRAS_IGNORAR.test(l)) continue;
+    // "2 LECHE ENTERA 1,25"  /  "2x LECHE 2,50 €"
+    let m = l.match(/^(\d+(?:[.,]\d+)?)\s*[xX]?\s+(.+?)\s+\d+[.,]\d{2}\s*[€E]?\s*$/);
+    let cant = 1, nombre = null;
+    if (m){ cant = num(m[1]); nombre = m[2]; }
+    else {
+      // "LECHE ENTERA 1,25"
+      m = l.match(/^(.+?)\s+\d+[.,]\d{2}\s*[€E]?\s*$/);
+      if (m) nombre = m[1];
+    }
+    if (!nombre) continue;
+    nombre = limpiarNombre(nombre);
+    if (nombre.length < 2 || !/\p{L}{2}/u.test(nombre) || cant <= 0 || cant > 99) continue;
+    detectados.push({ nombre, cant, ok: true });
+  }
+  pintarDetectados();
+}
+function pintarDetectados(){
+  const c = $('detectados');
+  if (!detectados.length){ c.innerHTML = '<small style="color:var(--gris)">No se detectaron productos. Edita el texto y pulsa "Volver a detectar".</small>'; return; }
+  c.innerHTML = detectados.map((d, i) =>
+    '<div class="detectado"><input type="checkbox" data-i="' + i + '" data-k="ok"' + (d.ok ? ' checked' : '') + '>' +
+    '<input type="number" min="0" step="any" value="' + d.cant + '" data-i="' + i + '" data-k="cant">' +
+    '<input type="text" value="' + esc(d.nombre) + '" data-i="' + i + '" data-k="nombre"></div>').join('');
+}
+$('detectados').addEventListener('input', e => {
+  const i = e.target.dataset.i; if (i == null) return;
+  const k = e.target.dataset.k;
+  detectados[i][k] = k === 'ok' ? e.target.checked : (k === 'cant' ? num(e.target.value) : e.target.value);
+});
+$('btnReparsear').onclick = parsearTicket;
+
+$('btnConfirmarTicket').onclick = async () => {
+  const elegidos = detectados.filter(d => d.ok && d.nombre.trim() && d.cant > 0);
+  if (!elegidos.length){ toast('No hay productos seleccionados'); return; }
+  let nuevos = 0, sumados = 0;
+  for (const d of elegidos){
+    const existente = productos.find(p => p.nombre.trim().toLowerCase() === d.nombre.trim().toLowerCase());
+    if (existente){ existente.cantidad = fmt(existente.cantidad + d.cant); await dbGuardar(existente); sumados++; }
+    else {
+      const p = { nombre: d.nombre.trim(), categoria: 'despensa', unidad: 'unidades', cantidad: d.cant, minimo: 1, foto: '' };
+      p.id = await dbGuardar(p); productos.push(p); nuevos++;
+    }
+  }
+  toast(nuevos + ' nuevos, ' + sumados + ' sumados a existentes');
+  detectados = []; pintarDetectados(); $('ocrTexto').value = '';
+  $('modalTicket').classList.remove('abierto');
+  cargar();
+};
+
+/* ---------- 7. PDF ---------- */
+$('btnPdf').onclick = () => {
+  if (!window.jspdf){ toast('jsPDF no cargó. Comprueba tu conexión.'); return; }
+  if (!productos.length){ toast('No hay productos para exportar'); return; }
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  const hoy = new Date();
+  const iso = hoy.getFullYear() + '-' + String(hoy.getMonth() + 1).padStart(2, '0') + '-' + String(hoy.getDate()).padStart(2, '0');
+  let y = 20;
+  const saltoSiHaceFalta = (extra) => { if (y + extra > 280){ doc.addPage(); y = 20; } };
+
+  doc.setFontSize(18); doc.setFont('helvetica', 'bold'); doc.text('MiDespensa - Inventario', 14, y); y += 8;
+  doc.setFontSize(10); doc.setFont('helvetica', 'normal'); doc.text('Generado el ' + hoy.toLocaleDateString('es-ES') + ' a las ' + hoy.toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'}), 14, y); y += 10;
+
+  function cabeceraTabla(){
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(10);
+    doc.setFillColor(255, 224, 178); doc.rect(14, y - 5, 182, 7, 'F');
+    doc.text('Producto', 16, y); doc.text('Cantidad', 110, y); doc.text('Unidad', 140, y); doc.text('Minimo', 172, y);
+    y += 7; doc.setFont('helvetica', 'normal');
+  }
+  function fila(p){
+    saltoSiHaceFalta(8);
+    doc.text(String(p.nombre).substring(0, 48), 16, y);
+    doc.text(String(fmt(p.cantidad)), 110, y); doc.text(p.unidad, 140, y); doc.text(String(fmt(p.minimo)), 172, y);
+    doc.setDrawColor(230); doc.line(14, y + 2, 196, y + 2); y += 7;
+  }
+
+  ['despensa', 'nevera', 'congelador', 'limpieza', 'otros'].forEach(cat => {
+    const items = productos.filter(p => p.categoria === cat).sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+    if (!items.length) return;
+    saltoSiHaceFalta(25);
+    doc.setFontSize(13); doc.setFont('helvetica', 'bold');
+    doc.text(cat.charAt(0).toUpperCase() + cat.slice(1) + ' (' + items.length + ')', 14, y); y += 7;
+    doc.setFontSize(10); cabeceraTabla();
+    items.forEach(fila); y += 5;
+  });
+
+  const bajos = productos.filter(p => p.cantidad <= p.minimo);
+  saltoSiHaceFalta(25);
+  doc.setFontSize(13); doc.setFont('helvetica', 'bold'); doc.setTextColor(198, 40, 40);
+  doc.text('Productos bajo minimo (' + bajos.length + ')', 14, y); y += 7;
+  doc.setTextColor(0); doc.setFontSize(10);
+  if (bajos.length){ cabeceraTabla(); bajos.forEach(fila); }
+  else { doc.setFont('helvetica', 'normal'); doc.text('Ningun producto esta por debajo del minimo.', 16, y); }
+
+  const nombrePdf = 'inventario_despensa_' + iso + '.pdf';
+  const esIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (esIOS){
+    // iOS no descarga directamente: se comparte/guarda desde el menú Compartir
+    const blob = doc.output('blob');
+    const archivo = new File([blob], nombrePdf, { type: 'application/pdf' });
+    if (navigator.canShare && navigator.canShare({ files: [archivo] })){
+      navigator.share({ files: [archivo], title: nombrePdf }).catch(() => {});
+    } else {
+      window.open(URL.createObjectURL(blob), '_blank');
+    }
+  } else {
+    doc.save(nombrePdf);
+  }
+  toast('PDF generado');
+};
+
+/* ---------- 8. ARRANQUE ---------- */
+abrirDB().then(cargar).catch(() => {
+  $('lista').innerHTML = '<div class="vacio">No se pudo abrir la base de datos del navegador.</div>';
+});
+</script>
+</body>
+</html>
